@@ -4,19 +4,19 @@ const footerColumns = [
     links: [
       {
         label: "Core Engine",
-        href: "#about-section",
+        href: "#who-we-are",
       },
       {
         label: "Wire Relay",
-        href: "#about-section",
+        href: "#who-we-are",
       },
       {
         label: "Anycast Edge",
-        href: "#about-section",
+        href: "#who-we-are",
       },
       {
         label: "Telemetry",
-        href: "#about-section",
+        href: "#who-we-are",
       },
     ],
   },
@@ -111,12 +111,12 @@ const logo =
 
 export default function Footer() {
   return (
-    <footer className="relative w-full overflow-hidden bg-background text-[13px] text-muted">
+    <footer className="bg-background text-muted relative w-full overflow-hidden text-[13px]">
       {/* Monumental Wordmark */}
       <div className="flex w-full flex-col items-center justify-end overflow-hidden pt-12 select-none">
         <div className="relative mx-auto flex w-full max-w-[1440px] translate-y-[32%] items-end justify-center px-4">
           <svg
-            className="h-auto w-full max-w-[1360px] overflow-visible pointer-events-none"
+            className="pointer-events-none h-auto w-full max-w-[1360px] overflow-visible"
             fill="none"
             viewBox="0 0 1400 360"
             xmlns="http://www.w3.org/2000/svg"
@@ -179,7 +179,7 @@ export default function Footer() {
         </div>
 
         <div className="relative z-20 w-full">
-          <div className="h-px w-full bg-border" />
+          <div className="bg-border h-px w-full" />
 
           <div
             className="h-8 w-full"
@@ -197,7 +197,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex flex-col items-start gap-5 lg:col-span-4">
             <a href="#hero-section" className="flex items-center gap-2.5">
-              <div className="flex h-6 w-6 items-center justify-center rounded border border-border-strong bg-surface-card p-1">
+              <div className="border-border-strong bg-surface-card flex h-6 w-6 items-center justify-center rounded border p-1">
                 <img
                   src={logo}
                   alt="ZEROAPS"
@@ -205,21 +205,21 @@ export default function Footer() {
                 />
               </div>
 
-              <span className="text-[15px] font-semibold tracking-tight text-heading">
+              <span className="text-heading text-[15px] font-semibold tracking-tight">
                 ZERO
                 <span className="text-muted">APS</span>
               </span>
             </a>
 
-            <div className="text-[12.5px] leading-relaxed font-normal text-muted">
+            <div className="text-muted text-[12.5px] leading-relaxed font-normal">
               Autonomous Systems Engineering Lab.
               <br />
               San Francisco • London • Zurich
             </div>
 
             {/* Status */}
-            <div className="inline-flex items-center gap-2 rounded border border-border-medium bg-surface-card px-2.5 py-1 font-mono text-[11.5px]">
-              <span className="status-pulse h-1.5 w-1.5 rounded-full bg-accent" />
+            <div className="border-border-medium bg-surface-card inline-flex items-center gap-2 rounded border px-2.5 py-1 font-mono text-[11.5px]">
+              <span className="status-pulse bg-accent h-1.5 w-1.5 rounded-full" />
 
               <span className="text-soft">All systems operational</span>
             </div>
@@ -231,7 +231,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"
-                className="flex h-7 w-7 items-center justify-center rounded border border-border-medium bg-surface-elevated text-muted transition-colors hover:bg-[var(--footer-social-hover)] hover:text-heading"
+                className="border-border-medium bg-surface-elevated text-muted hover:text-heading flex h-7 w-7 items-center justify-center rounded border transition-colors hover:bg-[var(--footer-social-hover)]"
               >
                 <svg
                   className="h-3.5 w-3.5 fill-current"
@@ -247,7 +247,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="X"
-                className="flex h-7 w-7 items-center justify-center rounded border border-border-medium bg-surface-elevated text-muted transition-colors hover:bg-[var(--footer-social-hover)] hover:text-heading"
+                className="border-border-medium bg-surface-elevated text-muted hover:text-heading flex h-7 w-7 items-center justify-center rounded border transition-colors hover:bg-[var(--footer-social-hover)]"
               >
                 <svg
                   className="h-3 w-3 fill-current"
@@ -264,7 +264,7 @@ export default function Footer() {
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-5 lg:col-span-8">
             {footerColumns.map((column) => (
               <div key={column.title}>
-                <div className="mb-3.5 font-mono text-[11px] font-semibold tracking-wider text-heading uppercase">
+                <div className="text-heading mb-3.5 font-mono text-[11px] font-semibold tracking-wider uppercase">
                   {column.title}
                 </div>
 
@@ -273,7 +273,7 @@ export default function Footer() {
                     <li key={`${column.title}-${link.label}`}>
                       <a
                         href={link.href}
-                        className="transition-colors hover:text-heading"
+                        className="hover:text-heading transition-colors"
                       >
                         {link.label}
                       </a>
@@ -286,22 +286,22 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-7 font-mono text-[10.5px] text-dim sm:flex-row">
+        <div className="border-border text-dim mt-12 flex flex-col items-center justify-between gap-4 border-t pt-7 font-mono text-[10.5px] sm:flex-row">
           <div>
             © 2026 ZEROAPS Inc. All rights reserved. High-concurrency systems
             infrastructure.
           </div>
 
           <div className="flex flex-wrap justify-center gap-5">
-            <a href="#" className="transition-colors hover:text-soft">
+            <a href="#" className="hover:text-soft transition-colors">
               Privacy Policy
             </a>
 
-            <a href="#" className="transition-colors hover:text-soft">
+            <a href="#" className="hover:text-soft transition-colors">
               Security Disclosures
             </a>
 
-            <a href="#" className="transition-colors hover:text-soft">
+            <a href="#" className="hover:text-soft transition-colors">
               Terms of Service
             </a>
           </div>

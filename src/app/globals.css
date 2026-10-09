@@ -31,43 +31,43 @@
   --border-strong: rgba(255, 255, 255, 0.2);
   --border-hover: rgba(255, 255, 255, 0.3);
 
-  /* Accent */
-  --accent: #8fa6f7;
-  --accent-strong: #8086ff;
-  --accent-light: #c7d2fe;
-  --accent-mid: #93a5fd;
-  --accent-deep: #6366f1;
-  --accent-cyan: #22d3ee;
+  /* Accent - Brand Purple */
+  --accent: #9100a7;
+  --accent-strong: #a500c0;
+  --accent-light: #d88ae5;
+  --accent-mid: #b83dcc;
+  --accent-deep: #6d007d;
+  --accent-cyan: #d946ef;
 
   /* Hero */
-  --hero-chrome-mid: #e2e8f0;
-  --hero-chrome-bottom: #94a3b8;
+  --hero-chrome-mid: #e9d5ff;
+  --hero-chrome-bottom: #c084fc;
 
   /* Three.js */
   --cube-body: #151515;
-  --cube-edge: #8fa6f7;
+  --cube-edge: #9100a7;
 
   /* Scrollbar */
-  --scrollbar-thumb: #1f1f24;
-  --scrollbar-thumb-hover: #2a2a30;
+  --scrollbar-thumb: #2b1630;
+  --scrollbar-thumb-hover: #4a1855;
 
   /* Shadows */
-  --shadow-soft: rgba(255, 255, 255, 0.2);
-  --shadow-hover: rgba(255, 255, 255, 0.25);
+  --shadow-soft: rgba(145, 0, 167, 0.25);
+  --shadow-hover: rgba(145, 0, 167, 0.4);
 
   /* Chrome */
   --chrome-top: #ffffff;
-  --chrome-middle: #d4d4d8;
-  --chrome-bottom: #71717a;
+  --chrome-middle: #e9d5ff;
+  --chrome-bottom: #a855f7;
 
-  --subtle-chrome-top: #e4e4e7;
-  --subtle-chrome-middle: #a1a1aa;
-  --subtle-chrome-bottom: #52525b;
+  --subtle-chrome-top: #f5d0fe;
+  --subtle-chrome-middle: #c084fc;
+  --subtle-chrome-bottom: #7e22ce;
 
   /* Footer Chrome */
-  --footer-chrome-top: #2c2c34;
-  --footer-chrome-mid: #121216;
-  --footer-social-hover: #15161c;
+  --footer-chrome-top: #3b1745;
+  --footer-chrome-mid: #16091b;
+  --footer-social-hover: #211026;
 }
 
 @theme inline {
