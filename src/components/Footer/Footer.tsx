@@ -1,309 +1,146 @@
-const footerColumns = [
-  {
-    title: "Platform",
-    links: [
-      {
-        label: "Core Engine",
-        href: "#who-we-are",
-      },
-      {
-        label: "Wire Relay",
-        href: "#who-we-are",
-      },
-      {
-        label: "Anycast Edge",
-        href: "#who-we-are",
-      },
-      {
-        label: "Telemetry",
-        href: "#who-we-are",
-      },
-    ],
-  },
-  {
-    title: "Protocols",
-    links: [
-      {
-        label: "Consensus",
-        href: "#expertise-section",
-      },
-      {
-        label: "Zero-Copy",
-        href: "#expertise-section",
-      },
-      {
-        label: "eBPF Filters",
-        href: "#expertise-section",
-      },
-      {
-        label: "mTLS Mesh",
-        href: "#expertise-section",
-      },
-    ],
-  },
-  {
-    title: "Systems",
-    links: [
-      {
-        label: "Apex Engine",
-        href: "#projects-section",
-      },
-      {
-        label: "Aether Pipeline",
-        href: "#projects-section",
-      },
-      {
-        label: "Vanguard HSM",
-        href: "#projects-section",
-      },
-      {
-        label: "Stack Index",
-        href: "#stack-section",
-      },
-    ],
-  },
-  {
-    title: "Security",
-    links: [
-      {
-        label: "Zero-Trust",
-        href: "#philosophy-section",
-      },
-      {
-        label: "Enclaves",
-        href: "#philosophy-section",
-      },
-      {
-        label: "Formal Specs",
-        href: "#philosophy-section",
-      },
-      {
-        label: "DKIM / Ed25519",
-        href: "#philosophy-section",
-      },
-    ],
-  },
-  {
-    title: "Community",
-    links: [
-      {
-        label: "Team",
-        href: "#team-section",
-      },
-      {
-        label: "Philosophy",
-        href: "#philosophy-section",
-      },
-      {
-        label: "Careers",
-        href: "#contact-section",
-      },
-      {
-        label: "Contact",
-        href: "mailto:contact@zeroaps.com",
-      },
-    ],
-  },
-];
+import FooterWordmark from "./FooterWordmark";
 
 const logo =
   "https://lh3.googleusercontent.com/aida/AEtjO1Vmfu7_Pwmz6qdh270kTgSjf-ZVzSe0481SP-Z0EWDwEsevp4bWSUH6XP5KX6y6tewPRe6mNwOd-9BzRz4o0jXNsT5vQmIzbPYtT54N8Fis_8tLAAzkDYqUnVQYMhbTLIgJyghdMaaXaXD-js3gUiXWwI9mnEScyVvlxBf4_oOVpzmsc42LeHVh0Vy_tmJsQBa6nXnAWrOeJhQ015X6rfXXV_ZMsPG8sD9mttX8uKWtsAMeRSMyj_HEzuSQ";
 
+const connectLinks = [
+  {
+    label: "Start a Project",
+    href: "mailto:engineering@zeroaps.com",
+  },
+  {
+    label: "Schedule Briefing",
+    href: "mailto:contact@zeroaps.com?subject=Schedule%20Briefing",
+  },
+  {
+    label: "Contact",
+    href: "mailto:contact@zeroaps.com",
+  },
+];
+
+const legalItems = ["Terms & Conditions", "Privacy Policy", "Security Policy"];
+
+const socialItems = [
+  {
+    label: "GitHub",
+    path: "M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z",
+  },
+  {
+    label: "X",
+    path: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z",
+  },
+  {
+    label: "LinkedIn",
+    path: "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z",
+  },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-background text-muted relative w-full overflow-hidden text-[13px]">
-      {/* Monumental Wordmark */}
-      <div className="flex w-full flex-col items-center justify-end overflow-hidden pt-12 select-none">
-        <div className="relative mx-auto flex w-full max-w-[1440px] translate-y-[32%] items-end justify-center px-4">
-          <svg
-            className="pointer-events-none h-auto w-full max-w-[1360px] overflow-visible"
-            fill="none"
-            viewBox="0 0 1400 360"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <defs>
-              <linearGradient id="footerChromeFill" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0%" stopColor="var(--footer-chrome-top)" />
+      {/* Oversized Wordmark - Top of Footer */}
+      <FooterWordmark />
 
-                <stop offset="35%" stopColor="var(--footer-chrome-mid)" />
-
-                <stop offset="70%" stopColor="var(--surface-subtle)" />
-
-                <stop offset="100%" stopColor="var(--background)" />
-              </linearGradient>
-
-              <linearGradient
-                id="footerChromeSpecular"
-                x1="0%"
-                x2="100%"
-                y1="0%"
-                y2="50%"
-              >
-                <stop offset="0%" stopColor="rgba(255,255,255,0.05)" />
-
-                <stop offset="30%" stopColor="rgba(255,255,255,0.85)" />
-
-                <stop offset="60%" stopColor="rgba(200,200,210,0.3)" />
-
-                <stop offset="100%" stopColor="rgba(255,255,255,0.05)" />
-              </linearGradient>
-            </defs>
-
-            <text
-              x="50%"
-              y="285"
-              textAnchor="middle"
-              fontFamily="var(--font-geist), sans-serif"
-              fontSize="240"
-              fontWeight="900"
-              letterSpacing="-0.04em"
-            >
-              <tspan fill="url(#footerChromeFill)">ZEROAPS</tspan>
-            </text>
-
-            <text
-              x="50%"
-              y="285"
-              fill="none"
-              textAnchor="middle"
-              fontFamily="var(--font-geist), sans-serif"
-              fontSize="240"
-              fontWeight="900"
-              letterSpacing="-0.04em"
-              strokeWidth="1.8"
-            >
-              <tspan stroke="url(#footerChromeSpecular)">ZEROAPS</tspan>
-            </text>
-          </svg>
-        </div>
-
-        <div className="relative z-20 w-full">
-          <div className="bg-border h-px w-full" />
-
-          <div
-            className="h-8 w-full"
-            style={{
-              background:
-                "linear-gradient(to bottom, var(--surface-card), var(--background))",
-            }}
-          />
-        </div>
-      </div>
-
-      {/* Footer Content */}
-      <div className="max-w-container-max mx-auto px-4 py-16 md:px-8">
-        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-8">
-          {/* Brand */}
-          <div className="flex flex-col items-start gap-5 lg:col-span-4">
-            <a href="#hero-section" className="flex items-center gap-2.5">
-              <div className="border-border-strong bg-surface-card flex h-6 w-6 items-center justify-center rounded border p-1">
-                <img
-                  src={logo}
-                  alt="ZEROAPS"
-                  className="h-full w-full object-contain"
-                />
-              </div>
-
-              <span className="text-heading text-[15px] font-semibold tracking-tight">
-                ZERO
-                <span className="text-muted">APS</span>
-              </span>
-            </a>
-
-            <div className="text-muted text-[12.5px] leading-relaxed font-normal">
-              Autonomous Systems Engineering Lab.
-              <br />
-              San Francisco • London • Zurich
-            </div>
-
-            {/* Status */}
-            <div className="border-border-medium bg-surface-card inline-flex items-center gap-2 rounded border px-2.5 py-1 font-mono text-[11.5px]">
-              <span className="status-pulse bg-accent h-1.5 w-1.5 rounded-full" />
-
-              <span className="text-soft">All systems operational</span>
-            </div>
-
-            {/* Social */}
-            <div className="mt-1 flex items-center gap-2">
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="GitHub"
-                className="border-border-medium bg-surface-elevated text-muted hover:text-heading flex h-7 w-7 items-center justify-center rounded border transition-colors hover:bg-[var(--footer-social-hover)]"
-              >
-                <svg
-                  className="h-3.5 w-3.5 fill-current"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z" />
-                </svg>
-              </a>
-
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="X"
-                className="border-border-medium bg-surface-elevated text-muted hover:text-heading flex h-7 w-7 items-center justify-center rounded border transition-colors hover:bg-[var(--footer-social-hover)]"
-              >
-                <svg
-                  className="h-3 w-3 fill-current"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          {/* Navigation */}
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-5 lg:col-span-8">
-            {footerColumns.map((column) => (
-              <div key={column.title}>
-                <div className="text-heading mb-3.5 font-mono text-[11px] font-semibold tracking-wider uppercase">
-                  {column.title}
+      {/* Footer Information */}
+      <div className="border-border border-t">
+        <div className="max-w-container-max mx-auto w-full px-4 pt-12 pb-10 md:px-8 md:pt-14">
+          <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+            {/* Brand Information */}
+            <div className="flex flex-col items-start lg:col-span-6">
+              {/* Original Logo */}
+              <a href="#hero-section" className="flex items-center gap-2.5">
+                <div className="border-border-strong bg-surface-card flex h-6 w-6 items-center justify-center rounded border p-1">
+                  <img
+                    src={logo}
+                    alt="ZEROAPS"
+                    className="h-full w-full object-contain"
+                  />
                 </div>
 
-                <ul className="space-y-2 text-[12.5px]">
-                  {column.links.map((link) => (
-                    <li key={`${column.title}-${link.label}`}>
+                <span className="text-heading text-[15px] font-semibold tracking-tight">
+                  ZERO
+                  <span className="text-muted">APS</span>
+                </span>
+              </a>
+
+              {/* Description */}
+              <p className="text-secondary mt-4 max-w-[390px] text-[12.5px] leading-[1.8] font-normal">
+                Engineering across layers. Software, networks, and security.
+              </p>
+
+              {/* Social Icons */}
+              <div className="mt-5 flex items-center gap-2.5">
+                {socialItems.map((item) => (
+                  <span
+                    key={item.label}
+                    role="img"
+                    aria-label={item.label}
+                    title={item.label}
+                    className="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-[6px] border border-[#25252A] bg-[#111114] text-[#A1A1AA] transition-colors duration-200 ease-out hover:border-[#45454B] hover:bg-[#1F1F23] hover:text-[#FAFAFA]"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                      className={
+                        item.label === "GitHub"
+                          ? "h-[21px] w-[21px]"
+                          : "h-[17px] w-[17px]"
+                      }
+                    >
+                      <path d={item.path} />
+                    </svg>
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Connect */}
+            <div className="lg:col-span-3">
+              <h3 className="text-primary mb-5 font-mono text-[10px] leading-none font-medium tracking-[0.08em] uppercase">
+                Connect
+              </h3>
+
+              <nav aria-label="Footer contact navigation">
+                <ul className="flex flex-col items-start gap-3">
+                  {connectLinks.map((link) => (
+                    <li key={link.label}>
                       <a
                         href={link.href}
-                        className="hover:text-heading transition-colors"
+                        className="text-secondary hover:text-primary text-[12.5px] leading-[1.2] font-normal transition-colors duration-200"
                       >
                         {link.label}
                       </a>
                     </li>
                   ))}
                 </ul>
-              </div>
-            ))}
+              </nav>
+            </div>
+
+            {/* Legal */}
+            <div className="lg:col-span-3">
+              <h3 className="text-primary mb-5 font-mono text-[10px] leading-none font-medium tracking-[0.08em] uppercase">
+                Legal
+              </h3>
+
+              <ul className="flex flex-col items-start gap-3">
+                {legalItems.map((item) => (
+                  <li
+                    key={item}
+                    className="text-secondary text-[12.5px] leading-[1.2] font-normal"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
 
-        {/* Bottom */}
-        <div className="border-border text-dim mt-12 flex flex-col items-center justify-between gap-4 border-t pt-7 font-mono text-[10.5px] sm:flex-row">
-          <div>
-            © 2026 ZEROAPS Inc. All rights reserved. High-concurrency systems
-            infrastructure.
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-5">
-            <a href="#" className="hover:text-soft transition-colors">
-              Privacy Policy
-            </a>
-
-            <a href="#" className="hover:text-soft transition-colors">
-              Security Disclosures
-            </a>
-
-            <a href="#" className="hover:text-soft transition-colors">
-              Terms of Service
-            </a>
+          {/* Copyright */}
+          <div className="border-border mt-12 border-t pt-7 md:mt-14">
+            <p className="text-dim font-mono text-[10.5px] leading-relaxed tracking-[0.025em]">
+              © 2026 ZEROAPS. All rights reserved.
+            </p>
           </div>
         </div>
       </div>
