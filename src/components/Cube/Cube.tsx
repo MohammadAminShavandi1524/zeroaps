@@ -1,5 +1,3 @@
-// components/Cube/Cube.tsx
-
 "use client";
 
 import dynamic from "next/dynamic";
@@ -11,7 +9,7 @@ const CubeScene = dynamic(() => import("./CubeScene"), {
       className="absolute inset-0 flex items-center justify-center"
       aria-hidden="true"
     >
-      <div className="aspect-square w-[42%] rounded-[28%] bg-gradient-to-br from-[#1d2025] to-[#090a0c]" />
+      <div className="aspect-square w-[44%] rounded-[26%] border border-white/6 bg-[radial-gradient(circle_at_30%_22%,rgba(250,250,250,0.12),transparent_26%),linear-gradient(145deg,#22242a_0%,#15171b_45%,#090a0c_100%)] shadow-[0_28px_80px_rgba(0,0,0,0.45)]" />
     </div>
   ),
 });
@@ -29,11 +27,11 @@ export default function Cube({
   autoRotate = true,
   autoTwist = true,
   interactive = true,
-  ariaLabel = "Interactive metallic 3D cube",
+  ariaLabel = "Interactive graphite 3D cube",
 }: CubeProps) {
   return (
     <div
-      className={`relative aspect-square w-full overflow-hidden ${className} `}
+      className={`relative aspect-square w-full overflow-hidden ${className}`}
       role="img"
       aria-label={ariaLabel}
     >

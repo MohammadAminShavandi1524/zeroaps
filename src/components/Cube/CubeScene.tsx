@@ -1,12 +1,8 @@
-// components/Cube/CubeScene.tsx
-
 "use client";
 
 import { Canvas, useFrame } from "@react-three/fiber";
 
 import { ContactShadows, Environment, Lightformer } from "@react-three/drei";
-
-import { Bloom, EffectComposer, Vignette } from "@react-three/postprocessing";
 
 import { useEffect, useMemo, useRef } from "react";
 
@@ -144,6 +140,7 @@ function CubeModel({
             roughness: isBright ? 0.2 : isPerforated ? 0.55 : 0.38,
 
             clearcoat: isBright ? 0.45 : 0.12,
+
             clearcoatRoughness: 0.25,
 
             envMapIntensity: isBright ? 0.7 : 0.4,
@@ -185,10 +182,12 @@ function CubeModel({
         (mesh.material as THREE.Material).dispose();
       });
     };
-  }, [accent, geometry]); // components/Cube/CubeScene.tsx
+  }, [accent, geometry]);
 
   const startTwist = () => {
-    if (rotating.current || !autoTwist || !pivotRef.current) return;
+    if (rotating.current || !autoTwist || !pivotRef.current) {
+      return;
+    }
 
     const move = MOVE_SEQUENCE[moveIndex.current % MOVE_SEQUENCE.length];
 
@@ -393,17 +392,6 @@ export default function CubeScene({
         blur={2.5}
         far={5}
       />
-
-      <EffectComposer>
-        <Bloom
-          intensity={1.2}
-          luminanceThreshold={0.25}
-          luminanceSmoothing={0.8}
-          mipmapBlur
-        />
-
-        <Vignette eskil={false} offset={0.35} darkness={0.55} />
-      </EffectComposer>
     </Canvas>
   );
 }
