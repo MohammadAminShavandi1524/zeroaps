@@ -113,22 +113,40 @@ function CubeModel({
 
     const positions = [-STEP, 0, STEP];
 
+    const perforatedPositions = new Set([
+      "1,0,0",
+      "-1,0,0",
+      "0,1,0",
+      "0,-1,0",
+      "0,0,1",
+      "0,0,-1",
+    ]);
+
+    const brightPositions = new Set(["1,1,1", "1,-1,-1", "-1,1,-1", "-1,-1,1"]);
+
     positions.forEach((x) => {
       positions.forEach((y) => {
         positions.forEach((z) => {
+          const key = [
+            Math.round(x / STEP),
+            Math.round(y / STEP),
+            Math.round(z / STEP),
+          ].join(",");
+
+          const isPerforated = perforatedPositions.has(key);
+          const isBright = brightPositions.has(key);
+
           const material = new THREE.MeshPhysicalMaterial({
-            color: "#101014",
+            color: isBright ? "#777984" : isPerforated ? "#15151b" : "#101014",
 
-            // حفظ ظاهر فلزی، با بازتاب کنترل‌شده‌تر
-            metalness: 0.85,
-            roughness: 0.34,
+            metalness: isBright ? 0.95 : 0.8,
 
-            // کاهش بازتاب‌های براق و دایره‌ای
-            clearcoat: 0.2,
-            clearcoatRoughness: 0.3,
+            roughness: isBright ? 0.2 : isPerforated ? 0.55 : 0.38,
 
-            // کاهش شدت بازتاب محیط
-            envMapIntensity: 0.45,
+            clearcoat: isBright ? 0.45 : 0.12,
+            clearcoatRoughness: 0.25,
+
+            envMapIntensity: isBright ? 0.7 : 0.4,
           });
 
           const mesh = new THREE.Mesh(geometry, material);

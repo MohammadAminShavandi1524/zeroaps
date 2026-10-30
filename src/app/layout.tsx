@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, JetBrains_Mono } from "next/font/google";
 
+import SmoothScroll from "@/components/SmoothScroll/SmoothScroll";
+
+import "lenis/dist/lenis.css";
 import "./globals.css";
 
 const geist = Geist({
@@ -32,7 +35,7 @@ export default function RootLayout({
       className={`${geist.variable} ${jetBrainsMono.variable} dark`}
     >
       <body className="bg-background text-foreground antialiased">
-        {children}
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );
